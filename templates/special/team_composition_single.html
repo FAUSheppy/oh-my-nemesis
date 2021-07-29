@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Select the roles you can play for the team">
+  <title>Champ Selection</title>
+
+  <!-- Bootstrap core CSS -->
+  {% include 'default-includes.html' %}
+
+  
+  <script src="/static/team_champselect.js"></script>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <main role="main" class="m-5">
+    <!-- Selector für Teammitglieder wenn Teamcpt -->
+    <!-- SELECTION -->
+    <div style="margin-top: 100px !important;"></div>
+    <div class="row" id="selection-row">
+      {% for key in roles.keys() %}
+      <div class="col-sm  {% if loop.index % 2 == 0 %} bg-light {% else %} bg-secondary {% endif %}" id="{{ key }}-selection">
+      <div class="text-sm-left role-info m1">{{ key }}</div></br>
+        <select id="{{ key }}-selector" class="selectpicker" data-live-search="true">
+          {% for champ in teamChamps %}
+          <option>{{ champ["name"] }}</option>
+          {% endfor %}
+        </select>
+        <button id="{{ key }}-selector-button" type="button" onClick="addChamp('{{ key }}-selector', '{{ key }}')" class="btn btn-primary">Add</button>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- SLECTED CHAMPIONS -->
+    <div class="row" id="selection-row" style="min-height: 400px;">
+      {% for key in roles.keys() %}
+      <div class="col-sm {% if loop.index % 2 == 0 %} bg-light {% else %} bg-secondary {% endif %}" id="{{ key }}-champs">
+        {% for champ in roles[key].champions %}
+        <p>{{ champ }}</p> <button type="button" onClick="removeChamp('{{ champ }}', '{{ key }}')" class="btn">Remove</button>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    </div>
+    </select>
+  </main>
+</body>

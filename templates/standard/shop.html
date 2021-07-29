@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap core CSS -->
+  {% include 'partials/header.html' %}
+
+  <script src="/static/contact.js"></script>
+
+</head>
+
+<body class="bg-secondary">
+    {% include 'partials/navbar.html' %}
+ 	<div class="container mt-5 mb-5">
+		<div class="row mt-5">
+           <div class="col">
+		       <div class="col image-min-dimensions">
+                   <img class="img-responsive w-100 image-max-dimensions"
+                       src="https://esports-erlangen.de/picture/nemesis_euw.jpg"></img>
+               </div>
+           </div>
+		   <div class="p-5 col text-min-dimensions">
+               <div class="row">
+                    <div class="col">
+             	        <h2>VoD Review</h2>
+             	        <h4>Review eines deiner Spiele als VoD</h4>
+             	        <p>
+             	        Nemesis is bad Nemesis is bad
+             	        Nemesis is bad Nemesis is bad
+             	        Nemesis is bad Nemesis is bad
+             	        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "partials/paypal-button.html" %}
+                    </div>
+                </div>
+		   </div>
+        </div>
+
+        <!-- example ##################### example -->
+
+		<div class="row mt-5">
+           <div class="col">
+		       <div class="col image-min-dimensions">
+                   <img class="img-responsive w-100 image-max-dimensions"
+                       src="https://esports-erlangen.de/picture/nemesis_euw.jpg"></img>
+               </div>
+           </div>
+		   <div class="p-5 col text-min-dimensions">
+               <div class="row">
+                    <div class="col">
+             	        <h2>Live Coaching</h2>
+             	        <h4>Live im discord blablabla</h4>
+             	        <p>
+             	        Nemesis is bad Nemesis is bad
+             	        Nemesis is bad Nemesis is bad
+             	        Nemesis is bad Nemesis is bad
+             	        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "partials/paypal-button.html" %}
+                    </div>
+                </div>
+		   </div>
+        </div>
+
+        <!-- example ##################### example -->
+
+    </div>
+    <div class=pb-4></div>
+	{% include "partials/footer.html" %}
+</body>
+</html>

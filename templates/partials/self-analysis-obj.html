@@ -1,0 +1,16 @@
+<div class="row border-secondary">
+    {% set types = [ "Pre Game", "Early Game", "Ganks", "Counterjungling", "Mid Game", "Late Game", "All Game" ] %}
+    {% set ratings = [ "Good", "Decent", "Practiced", "Normal", "Bad", "Worse" ] %}
+    {% for t in types %}
+    <div id="{{ t }}" class="col">
+        <h3>{{ t }}</h3>
+        <textarea style="width: 100%;"></textarea>
+        <select class="browser-default custom-select">
+          <option selected>...</option>
+          {% for r in ratings %}
+          <option value="{{ r }}">{{ r }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    {% endfor %}
+</div>

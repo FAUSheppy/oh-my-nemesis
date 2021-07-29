@@ -1,0 +1,136 @@
+<div class="p-3 row border border-secondary">
+    {% set positions = [ "Top", "Jgl", "Mid", "Bot", "Sup" ] %}
+    {% set gameTypes = [ "Leauge", "Tournament", "Scrim", "Normal", "Flex" ] %}
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h2>Game Type</h2>
+      </div>
+      <div class="col">
+        <select class="browser-default custom-select">
+          <option selected>...</option>
+          {% for gt in gameTypes %}
+          <option value="{{ gt }}">{{ gt }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>Our Team</h3>
+          </div>
+        </div>
+        <div class="row">
+            {% for p in positions %}
+            <div id="{{ p }}" class="col">
+                <h4>{{ p }}</h4>
+                {% include "partials/champ-selector-dropdown.html" %}
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-5 pb-5">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>Enemy Team</h3>
+          </div>
+        </div>
+        <div class="row">
+            {% for p in positions %}
+            <div id="{{ p }}" class="col">
+                <h4>{{ p }}</h4>
+                <select class="browser-default custom-select">
+                  <option selected>...</option>
+                  {% for champs in champs %}
+                  <option value="{{ r }}">{{ r }}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-5 pb-5">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>My Side</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <select class="browser-default custom-select">
+              <option selected>...</option>
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <h3>Result</h3>
+        </div>
+        <div class="row">
+          <select class="browser-default custom-select">
+            <option selected>...</option>
+            <option value="w">Win</option>
+            <option value="l">Lose</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>KDA</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <select class="browser-default custom-select">
+              <option selected>...</option>
+              <option value="0">2</option>
+              <option value="1">3</option>
+            </select>
+          </div>
+          <div class="col">
+            <select class="browser-default custom-select">
+              <option selected>...</option>
+              <option value="0">2</option>
+              <option value="1">3</option>
+            </select>
+          </div>
+          <div class="col">
+            <select class="browser-default custom-select">
+              <option selected>...</option>
+              <option value="0">2</option>
+              <option value="1">3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h3>Feedback</h3>
+        <textarea class="w-100"></textarea>
+      </div>
+
+      <div class="col">
+        <h3>Feedback to Matchup</h3>
+        <textarea class="w-100"></textarea>
+      </div>
+    </div>
+  </div>
+</div>

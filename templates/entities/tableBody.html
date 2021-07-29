@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Basic Table</title>
+        <link rel="shortcut icon" href="/static/defaultFavicon.ico">
+        <link rel=stylesheet href="/static/table.css">
+        <script defer src="/static/table.js"></script>
+        <style>
+            {% if cellWidth %}
+            .cell{
+                width: {{ cellWidth }};
+            }
+            {% endif %}
+        </style>
+        
+        <!-- Bootstrap core CSS -->
+        {% include 'default-includes.html' %}
+    </head>
+    <body  class="pt-5 mt-5">
+        {% include 'navbar.html' %}
+        <div class="hidden" id="tableId">{{ tableId }}</div>
+        <div class="hidden" id="hasHeaderColumn">{{ hasHeaderColumn }}</div>
+        <div class="hidden" id="hasHeaderRow">{{ hasHeaderRow }}</div>
+
+        {% if helpRow %}
+            {{ helpRow }} {% if champion %} {{ champion}} {% endif %}
+        {% else %}
+        <table>
+            <tr id="colorExplanation">
+            </tr>
+        </table>
+        {% endif %}
+        <div class="information">
+            Left CTRL or SHIFT to change color of selected cell (or press the desired color with the cell selected)
+        </div>
+        <br>
+		{{ body }}
+        <div style="text-align: center">
+            <button onclick=saveToServer()>Save</button>
+        </div>
+    </body>
+</html>

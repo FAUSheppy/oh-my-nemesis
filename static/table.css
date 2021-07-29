@@ -1,0 +1,47 @@
+body{
+	background: #161618;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td{
+    border-style: groove;
+    border-width: 2px;
+    border-color: antiquewhite;
+	background-color: #f5f7f6;
+}
+.header{
+    background: lightcyan !important;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+.information{
+    margin-top: 8px;
+    font-style: italic;
+	color: #f5f7f6;
+}
+button{
+    height: 40px;
+    width:  30%;
+    margin: 20px;
+	border: transparent;
+	border-radius: 20px;
+	background: aqua;
+	font-weight: bold;
+	transition-duration: 0.3s;
+	
+}
+button:hover {
+  	background-color: #4CAF50;
+  	color: white;
+}
+.color-cell{
+    transition-duration: 0.3s;
+}
+.color-cell:hover{
+    opacity: 0.75;
+}

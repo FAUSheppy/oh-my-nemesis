@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Leauge of Legends Coaching">
+  <title>Nemesis Coaching</title>
+
+  <!-- Bootstrap core CSS -->
+  {% include 'default-includes.html' %}
+</head>
+
+<body>
+
+  {% include 'navbar.html' %}
+
+  <main role="main">
+
+    <header class="eyecatcher">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="font-weight-light">{{ config["main-title"] }}</h1>
+            <p class="lead">{{ config["subtitle"] }}</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services -->
+    <div class="container pt-3">
+      <div class="row">
+        {% for card in services %}
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="static/pictures/{{ card["picture"] }}">
+            <div class="card-body">
+              <h2>{{ card["headline"] }}</h2>
+              <p>{{ card["description"] }}</p>
+              <p><a class="btn btn-secondary" href="{{ card["primary-link"] }}" role="button">Read More &raquo;</a></p>
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <hr>
+      </div>
+    </div>
+
+    <!-- Prices -->
+	{% for prices in pricesSections %}
+    <section class="pricing py-5 mb-5"" style="background-color: chartreuse;">
+      <div class="container">
+        <div class="row">
+          {% for card in prices %}
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">{{ card["header"] }}</h5>
+                <h6 class="card-price text-center">{{ card["price"] }}&euro;<span class="period">{{ card["period"] }}</span></h6>
+                <hr>
+                <ul class="fa-ul">
+                  {% for feature in card["features"] %}
+                  <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ feature }}</li>
+                  {% endfor %}
+                  {% for feature in card["disabledFeatures"] %}
+                  <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>{{ feature }}</li>
+                  {% endfor %}
+                </ul>
+                <a href="/contact?offerId={{ card["config-id"] }}" class="btn btn-block btn-primary text-uppercase">Contact Me</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+	{% endfor %}
+
+    {% include 'footer.html' %}
+  </main>
+</body>
+
+</html>

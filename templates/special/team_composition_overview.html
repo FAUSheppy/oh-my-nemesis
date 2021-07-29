@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Leauge of Legends Coaching">
+  <title>Nemesis Coaching</title>
+
+  <!-- Bootstrap core CSS -->
+  {% include 'default-includes.html' %}
+</head>
+
+<body>
+
+  {% include 'navbar.html' %}
+  <main role="main">
+
+    <!-- Services -->
+    <div class="container pt-5 my-5">
+      <div class="row">
+        {% for comp in teamComps %}
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+              <h2>{{ comp["name"] }}</h2>
+              <p>{{ comp["Description"] }}</p>
+              <p><a class="btn btn-secondary" href="/team_composition_single?id={{ comp['config-id'] }}" role="button">Open &raquo;</a></p>
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <hr>
+      </div>
+    </div>
+
+    {% include 'footer.html' %}
+    <button type="button" onClick="createNewTeam()" class="ml-3 btn btn-primary">Create New Team</button>
+  </main>
+</body>
+
+</html>
