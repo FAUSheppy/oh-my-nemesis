@@ -1,0 +1,24 @@
+{
+    "main-title": "Get better at Leauge of Tilt",
+    "subtitle": "Coaching by the only real nemesis",
+
+    "company-name"   : "Atlantis Industries",
+    "company-phone"  : "0911/12345904",
+    "company-street" : "Atlantis Gasse 17",
+    "company-postal" : "90777 Lantia Prime",
+    "company-mail"   : "fake@athqtest.de",
+    "company-freetext" : "Umsatzsteuer ID: ABJ472H",
+    "company-responsible" : "John Sheppard",
+
+    "login-help" : "Don't have an account or issues loggin in?",
+    "login-help-action" : "Contact us!",
+	
+	"CONTACT_EMAIL" : "sheppy@atlantishq.de",
+
+    "CONTACT_HEADLINE" : "Kontaktieren Sie uns!",
+    "CONTACT_PLACEHOLDER_NAME" : "Ihr Name",
+    "CONTACT_PLACEHOLDER_EMAIL" : "E-Mail oder Telefon",
+    "CONTACT_PLACEHOLDER_SUBJECT" : "Betreff",
+    "CONTACT_PLACEHOLDER_TEXTAREA" : "Ihre Nachricht..."
+
+}
